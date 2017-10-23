@@ -14,3 +14,10 @@ module.exports.word = [
   body('name').isAlphanumeric().withMessage('Name must contain only letters and numbers'),
   errorCheck
 ]
+
+module.exports.game = [
+  body('player').exists().withMessage('Player must exist'),
+  body('player').isLength({ min: 2 }).withMessage('Name must be at least 2 characters long'),
+  body('player').isAlphanumeric().withMessage('Name must contain only letters and numbers'),
+  errorCheck
+]
